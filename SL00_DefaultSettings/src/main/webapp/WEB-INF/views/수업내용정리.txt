@@ -1,0 +1,93 @@
+1. 스프링 + 전용 이클립스 = [STS 3.19.8] ,  STS 4 X(Spring Boot)
+2. SpringClass 폴더 생성
+3. STS 3 + Lombok 설치
+4. STS 3 실행 + 메이븐(maven)빌드도구 + 스프링 프로젝트
+   1) 프로젝트명 : SL00_DefaultSettings
+   2) top-level package :  domain      org.doit.ik
+   3) 환경 설정 
+5. pom.xml
+   1) jsp   lib 폴더 안에 모듈(jar) 관리
+   2) pom.xml 파일을 사용해서 의존 모듈의 관리  
+      <dependency></dependency> 태그를 추가하면 자동으로 
+      원격저장소에서 다운로드 받아 .m2 폴더 안에 repository로컬저장소에
+      저장.
+      앞으로 스프링 수업할 때 필요한 모듈 추가 벌써 해 두었습니다.1. 스프링 + 전용 이클립스 = [STS 3] ,  STS 4 X(Spring Boot)
+2. SpringClass 폴더 생성
+3. STS 3 + Lombok 설치
+4. STS 3 실행 + 메이븐(maven)빌드도구 + 스프링 프로젝트
+   1) 프로젝트명 : SL00_DefaultSettings
+   2) top-level package :  domain      org.doit.ik
+   3) 환경 설정 
+5. pom.xml
+   1) jsp   lib 폴더 안에 모듈(jar) 관리
+   2) pom.xml 파일을 사용해서 의존 모듈의 관리  
+      <dependency></dependency> 태그를 추가하면 자동으로 
+      원격저장소에서 다운로드 받아 .m2 폴더 안에 repository로컬저장소에
+      저장.
+      앞으로 스프링 수업할 때 필요한 모듈 추가 벌써 해 두었습니다.
+6. 스프링 MVC 구조
+
+	책 270 페이지 참조
+
+6-2. JSP/Servlet MVC 구조
+	1) web.xml 
+		-MV[C] 서블릿 등록
+		-CommandHandler.java 인터페이스 + process()
+		-commandHandler.properties 파일
+		 list.do = ListHandler ( [M]VC )
+	2) MV[C] 서블릿 == 컨트롤러
+		int(){
+			Map.put("요청URL",Handler객체)
+		}
+	3) list.do => 요청 => 컨트롤러
+						doGet(){
+						 list.jsp	ListHandler.process()
+						 포워딩.
+						}
+						
+	4) list.jsp 응답
+
+7. 처리 순서(과정) 이해 
+  1) web.xml   
+      ㄱ. MV[C]  프론트컨트롤러  등록
+          + servlet-context.xml 설정파일 읽어와서 처리.
+          
+          HomeControllerHomeController 스프링 빈 객체 생성
+            - /  home() 컨트롤러 메서드를 사용
+   
+      ㄴ. /WEB-INF/spring/root-context.xml      스프링 빈 객체 생성, 설정
+        /WEB-INF/spring/security-context.xml  스프링 시큐리티 (인증,권한) 설정파일
+   
+  2)  브라우저   http://localhost 엔터
+		 
+8. webapp
+	ㄴ resources 폴더 jspClass에서 가져오기 images sist가져오기
+	
+9. 실습
+	1) home.jsp
+		[ 스프링 MVC처리 ] 
+		http://localhost/time 요청	-> time.jsp 응답
+		<h3><a href="/time">/time</a></h3>
+	 
+		???dao.java
+			getTime(){
+				String sql = " SELECT sysdate FROM dual";
+				return 현재시스템시간/날짜;
+			}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

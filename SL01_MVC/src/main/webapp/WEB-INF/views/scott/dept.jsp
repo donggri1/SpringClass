@@ -254,6 +254,17 @@
 	            } // if
 	    	
 	     });
+	    	
+	    //
+  $("#search").on("click",function(event){
+           if(!$("tbody :checkbox:checked").length){
+              alert("부서를 체크해주세요.");
+              return;
+           }//if
+           
+           $("form").submit();
+           
+        })
 	});
 </script>
 

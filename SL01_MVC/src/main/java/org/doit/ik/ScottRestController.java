@@ -28,6 +28,7 @@ public class ScottRestController {
 		log.info("ScottRestController.insertDept() ........");
 		int insertResult = this.deptMapper.insertDept(dto);
 		
+		//결과물과 상태값 같이 넘기기위해함
 		return insertResult==1
 				? new ResponseEntity<>("SUCCESS",HttpStatus.OK)
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)

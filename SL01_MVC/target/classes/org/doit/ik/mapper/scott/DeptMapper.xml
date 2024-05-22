@@ -5,7 +5,11 @@
   
 <mapper namespace="org.doit.ik.mapper.scott.DeptMapper">
 	<!-- ArrayList<DeptDTO> -->
-  <select id="selectDept" resultType="org.doit.ik.domain.DeptDTO">
+  <!-- <select id="selectDept" resultType="org.doit.ik.domain.DeptDTO">
+  	org.doit.ik.mapper
+  		ㄴ mybatis-config.xml -->
+
+  <select id="selectDept" resultType="DeptDTO">
 	   SELECT d.deptno,dname,loc
 	   			,COUNT(e.empno) numberOfEmps
 	   FROM dept d FULL JOIN emp e ON d.deptno=e.deptno

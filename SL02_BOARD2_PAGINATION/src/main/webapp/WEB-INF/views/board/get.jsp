@@ -62,6 +62,8 @@
        </tfoot>
      </table>
      <input type="hidden" name="${ _csrf.parameterName }" value="${ _csrf.token }">
+       		<input type="hidden" name="pageNum" value="${param.pageNum}" >
+  		<input type="hidden" name="amount" value="${param.amount}" >
   </form>    
 </div>
 <script>
@@ -92,12 +94,18 @@ $(function(){
 					}
 		}else if (operation ==='list') {
 			// location.href="/board/list"
+				let pageNumTag = $(":hidden[name='pageNum']").clone();
+				let amountTag= $(":hidden[name='amount']").clone();
 						formObj
 						.attr({
 							"action":"/board/list",
 							"method":"get"
 						})
-					.empty()
+						.empty()
+						.append(pageNumTag)
+						.append(amountTag)
+						//.append("<input type='hidden' name='pageNum' value='" + ${param.pageNum}+"'>")
+						//.append("<input type='hidden' name='amount' value='" + ${param.amount}+"'>")	
 					.submit();
 		}//if
 		

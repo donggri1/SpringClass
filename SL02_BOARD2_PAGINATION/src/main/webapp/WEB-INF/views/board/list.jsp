@@ -57,8 +57,9 @@
               <c:forEach items="${ list }"  var="board">
                  <tr>
            <td><c:out value="${ board.bno }" /></td>
-           <td><a href="/board/get?bno=${ board.bno }"><c:out value="${ board.title }" /></a></td>
+           <%-- <td><a href="/board/get?bno=${ board.bno }"><c:out value="${ board.title }" /></a></td> --%>
            <%-- <td><a href="/board/get/${ board.bno }"><c:out value="${ board.title }" /></a></td> --%>
+           <td><a class="move" href="${ board.bno }"><c:out value="${ board.title }" /></a></td>
            <td><c:out value="${ board.writer }" /></td>
            <td><fmt:formatDate value="${ board.regdate }" pattern="yyyy-MM-dd"/> </td>
            <td><fmt:formatDate value="${ board.updatedate }" pattern="yyyy-MM-dd"/> </td> 
@@ -68,8 +69,32 @@
         </c:choose>
       </tbody>
       <tfoot>
+      <tr>
+      	<td colspan="5">
+      		<div class="center">
+      			<div class="pagination">
+      				<c:if test="${pageMaker.prev}">
+      					<a href="${pageMaker.startPage-1}">&laquo;</a>
+      				</c:if>
+					<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage}" step="1" var="num">
+						<a href="${num}"  class='${num eq pageMaker.criteria.pageNum?"active":""}'>${num}</a>						
+					</c:forEach>
+      				<c:if test="${pageMaker.next}">
+      					<a href="${pageMaker.endPage+1}">&raquo;</a>
+      				</c:if>      				
+      			</div><!-- pagination -->      		
+      		</div><!-- center -->
+      	</td>
+      </tr>
+      
       </tfoot>
     </table>
+  
+  	<form id="actionForm"  action="/board/list" method="get" >
+  		<input type="hidden" name="pageNum" value="${pageMaker.criteria.pageNum}" >
+  		<input type="hidden" name="amount" value="${pageMaker.criteria.amount}" >
+  		<!-- 검색 조건 , 검색어  -->
+  	</form>
   
 </div>
 
@@ -84,9 +109,59 @@
 		function checkModal(result){
 			if(result==''||history.state)  return;	
 			if(  parseInt(  result  ) > 0 ) alert( `\${result} 번이 등록되었습니다.` );
-		}
+		}//checkModal
+		
+		// 1. 제목을 클릭하면 상세보기 페이지로 이동
+		// href="3" 링크를 번호만준 이유
+		// /board/get?bno=&pageNum=&amount&type=&keyword=등등
+		var actionForm = $("#actionForm");
+		$("a.move").on("click",function(event){
+			event.preventDefault();
+			
+			actionForm
+				.attr("action","/board/get")
+				.append("<input type='hidden' name='bno' value='" + $(this).attr("href") +"'>")
+				.submit();
+			
+		});//click
+		
+		// 2. 페이징 번호 클릭 이동.
+		$(".pagination a").on("click",function(event){
+			event.preventDefault();
+						// 클릭한 링크태그
+			let pageNum = $(this).attr("href");
+						
+			//$("#actionForm :hidden[name=pageNum]").val(pageNum);			
+			
+			actionForm
+				.find(":hidden[name=pageNum]").val(pageNum)
+					.end()
+				.submit();
+			
+		});//a.번호클릭
+		
 	});//fu
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,93 +1,42 @@
-1. ½ºÇÁ¸µ + Àü¿ë ÀÌÅ¬¸³½º = [STS 3.19.8] ,  STS 4 X(Spring Boot)
-2. SpringClass Æú´õ »ý¼º
-3. STS 3 + Lombok ¼³Ä¡
-4. STS 3 ½ÇÇà + ¸ÞÀÌºì(maven)ºôµåµµ±¸ + ½ºÇÁ¸µ ÇÁ·ÎÁ§Æ®
-   1) ÇÁ·ÎÁ§Æ®¸í : SL00_DefaultSettings
+1. ìŠ¤í”„ë§ + ì „ìš© ì´í´ë¦½ìŠ¤ = [STS 3] , STS 4 X(Spring Boot)
+2. SpringClass í´ë” ìƒì„±
+3. STS 3 + Lombok ì„¤ì¹˜
+4. STS 3 ì‹¤í–‰ + ë©”ì´ë¸(maven)ë¹Œë“œë„êµ¬ + ìŠ¤í”„ë§ í”„ë¡œì íŠ¸
+   1) í”„ë¡œì íŠ¸ëª… : SL00_DefaultSettings
    2) top-level package :  domain      org.doit.ik
-   3) È¯°æ ¼³Á¤ 
+   3) í™˜ê²½ ì„¤ì • 
 5. pom.xml
-   1) jsp   lib Æú´õ ¾È¿¡ ¸ðµâ(jar) °ü¸®
-   2) pom.xml ÆÄÀÏÀ» »ç¿ëÇØ¼­ ÀÇÁ¸ ¸ðµâÀÇ °ü¸®  
-      <dependency></dependency> ÅÂ±×¸¦ Ãß°¡ÇÏ¸é ÀÚµ¿À¸·Î 
-      ¿ø°ÝÀúÀå¼Ò¿¡¼­ ´Ù¿î·Îµå ¹Þ¾Æ .m2 Æú´õ ¾È¿¡ repository·ÎÄÃÀúÀå¼Ò¿¡
-      ÀúÀå.
-      ¾ÕÀ¸·Î ½ºÇÁ¸µ ¼ö¾÷ÇÒ ¶§ ÇÊ¿äÇÑ ¸ðµâ Ãß°¡ ¹ú½á ÇØ µÎ¾ú½À´Ï´Ù.1. ½ºÇÁ¸µ + Àü¿ë ÀÌÅ¬¸³½º = [STS 3] ,  STS 4 X(Spring Boot)
-2. SpringClass Æú´õ »ý¼º
-3. STS 3 + Lombok ¼³Ä¡
-4. STS 3 ½ÇÇà + ¸ÞÀÌºì(maven)ºôµåµµ±¸ + ½ºÇÁ¸µ ÇÁ·ÎÁ§Æ®
-   1) ÇÁ·ÎÁ§Æ®¸í : SL00_DefaultSettings
+   1) jsp   lib í´ë” ì•ˆì— ëª¨ë“ˆ(jar) ê´€ë¦¬
+   2) pom.xml íŒŒì¼ì„ ì‚¬ìš©í•´ì„œ ì˜ì¡´ ëª¨ë“ˆì˜ ê´€ë¦¬  
+      <dependency></dependency> íƒœê·¸ë¥¼ ì¶”ê°€í•˜ë©´ ìžë™ìœ¼ë¡œ 
+      ì›ê²©ì €ìž¥ì†Œì—ì„œ ë‹¤ìš´ë¡œë“œ ë°›ì•„ .m2 í´ë” ì•ˆì— repositoryë¡œì»¬ì €ìž¥ì†Œì—
+      ì €ìž¥.
+      ì•žìœ¼ë¡œ ìŠ¤í”„ë§ ìˆ˜ì—…í•  ë•Œ í•„ìš”í•œ ëª¨ë“ˆ ì¶”ê°€ ë²Œì¨ í•´ ë‘ì—ˆìŠµë‹ˆë‹¤.1. ìŠ¤í”„ë§ + ì „ìš© ì´í´ë¦½ìŠ¤ = [STS 3] ,  STS 4 X(Spring Boot)
+2. SpringClass í´ë” ìƒì„±
+3. STS 3 + Lombok ì„¤ì¹˜
+4. STS 3 ì‹¤í–‰ + ë©”ì´ë¸(maven)ë¹Œë“œë„êµ¬ + ìŠ¤í”„ë§ í”„ë¡œì íŠ¸
+   1) í”„ë¡œì íŠ¸ëª… : SL00_DefaultSettings
    2) top-level package :  domain      org.doit.ik
-   3) È¯°æ ¼³Á¤ 
+   3) í™˜ê²½ ì„¤ì • 
 5. pom.xml
-   1) jsp   lib Æú´õ ¾È¿¡ ¸ðµâ(jar) °ü¸®
-   2) pom.xml ÆÄÀÏÀ» »ç¿ëÇØ¼­ ÀÇÁ¸ ¸ðµâÀÇ °ü¸®  
-      <dependency></dependency> ÅÂ±×¸¦ Ãß°¡ÇÏ¸é ÀÚµ¿À¸·Î 
-      ¿ø°ÝÀúÀå¼Ò¿¡¼­ ´Ù¿î·Îµå ¹Þ¾Æ .m2 Æú´õ ¾È¿¡ repository·ÎÄÃÀúÀå¼Ò¿¡
-      ÀúÀå.
-      ¾ÕÀ¸·Î ½ºÇÁ¸µ ¼ö¾÷ÇÒ ¶§ ÇÊ¿äÇÑ ¸ðµâ Ãß°¡ ¹ú½á ÇØ µÎ¾ú½À´Ï´Ù.
-6. ½ºÇÁ¸µ MVC ±¸Á¶
+   1) jsp   lib í´ë” ì•ˆì— ëª¨ë“ˆ(jar) ê´€ë¦¬
+   2) pom.xml íŒŒì¼ì„ ì‚¬ìš©í•´ì„œ ì˜ì¡´ ëª¨ë“ˆì˜ ê´€ë¦¬  
+      <dependency></dependency> íƒœê·¸ë¥¼ ì¶”ê°€í•˜ë©´ ìžë™ìœ¼ë¡œ 
+      ì›ê²©ì €ìž¥ì†Œì—ì„œ ë‹¤ìš´ë¡œë“œ ë°›ì•„ .m2 í´ë” ì•ˆì— repositoryë¡œì»¬ì €ìž¥ì†Œì—
+      ì €ìž¥.
+      ì•žìœ¼ë¡œ ìŠ¤í”„ë§ ìˆ˜ì—…í•  ë•Œ í•„ìš”í•œ ëª¨ë“ˆ ì¶”ê°€ ë²Œì¨ í•´ ë‘ì—ˆìŠµë‹ˆë‹¤.
 
-	Ã¥ 270 ÆäÀÌÁö ÂüÁ¶
+6. ìŠ¤í”„ë§ MVC êµ¬ì¡°
 
-6-2. JSP/Servlet MVC ±¸Á¶
-	1) web.xml 
-		-MV[C] ¼­ºí¸´ µî·Ï
-		-CommandHandler.java ÀÎÅÍÆäÀÌ½º + process()
-		-commandHandler.properties ÆÄÀÏ
-		 list.do = ListHandler ( [M]VC )
-	2) MV[C] ¼­ºí¸´ == ÄÁÆ®·Ñ·¯
-		int(){
-			Map.put("¿äÃ»URL",Handler°´Ã¼)
-		}
-	3) list.do => ¿äÃ» => ÄÁÆ®·Ñ·¯
-						doGet(){
-						 list.jsp	ListHandler.process()
-						 Æ÷¿öµù.
-						}
-						
-	4) list.jsp ÀÀ´ä
-
-7. Ã³¸® ¼ø¼­(°úÁ¤) ÀÌÇØ 
+7. ì²˜ë¦¬ ìˆœì„œ(ê³¼ì •) ì´í•´ 
   1) web.xml   
-      ¤¡. MV[C]  ÇÁ·ÐÆ®ÄÁÆ®·Ñ·¯  µî·Ï
-          + servlet-context.xml ¼³Á¤ÆÄÀÏ ÀÐ¾î¿Í¼­ Ã³¸®.
+      ã„±. MV[C]  í”„ë¡ íŠ¸ì»¨íŠ¸ë¡¤ëŸ¬  ë“±ë¡
+          + servlet-context.xml ì„¤ì •íŒŒì¼ ì½ì–´ì™€ì„œ ì²˜ë¦¬.
           
-          HomeControllerHomeController ½ºÇÁ¸µ ºó °´Ã¼ »ý¼º
-            - /  home() ÄÁÆ®·Ñ·¯ ¸Þ¼­µå¸¦ »ç¿ë
+          HomeControllerHomeController ìŠ¤í”„ë§ ë¹ˆ ê°ì²´ ìƒì„±
+            - /  home() ì»¨íŠ¸ë¡¤ëŸ¬ ë©”ì„œë“œë¥¼ ì‚¬ìš©
    
-      ¤¤. /WEB-INF/spring/root-context.xml      ½ºÇÁ¸µ ºó °´Ã¼ »ý¼º, ¼³Á¤
-        /WEB-INF/spring/security-context.xml  ½ºÇÁ¸µ ½ÃÅ¥¸®Æ¼ (ÀÎÁõ,±ÇÇÑ) ¼³Á¤ÆÄÀÏ
+      ã„´. /WEB-INF/spring/root-context.xml      ìŠ¤í”„ë§ ë¹ˆ ê°ì²´ ìƒì„±, ì„¤ì •
+        /WEB-INF/spring/security-context.xml  ìŠ¤í”„ë§ ì‹œíë¦¬í‹° (ì¸ì¦,ê¶Œí•œ) ì„¤ì •íŒŒì¼
    
-  2)  ºê¶ó¿ìÀú   http://localhost ¿£ÅÍ
-		 
-8. webapp
-	¤¤ resources Æú´õ jspClass¿¡¼­ °¡Á®¿À±â images sist°¡Á®¿À±â
-	
-9. ½Ç½À
-	1) home.jsp
-		[ ½ºÇÁ¸µ MVCÃ³¸® ] 
-		http://localhost/time ¿äÃ»	-> time.jsp ÀÀ´ä
-		<h3><a href="/time">/time</a></h3>
-	 
-		???dao.java
-			getTime(){
-				String sql = " SELECT sysdate FROM dual";
-				return ÇöÀç½Ã½ºÅÛ½Ã°£/³¯Â¥;
-			}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+  2)  ë¸Œë¼ìš°ì €   http://localhost ì—”í„°         

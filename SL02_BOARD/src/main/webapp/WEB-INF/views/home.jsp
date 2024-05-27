@@ -13,7 +13,9 @@
 
 <h3>
   <a href="/board/list">/board/list</a>
+  <a href="/product/view?productid=3000000000001">/product/view</a>
 </h3>
 
 </body>
 </html>
+S

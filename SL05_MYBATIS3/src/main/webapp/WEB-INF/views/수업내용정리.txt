@@ -1,0 +1,5 @@
+[mybatis 사용 예제]
+-JOIN 처리-
+ dept/emp/salgrade 테이블 조인.
+ 
+ -dept/emp 요청URL

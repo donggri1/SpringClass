@@ -20,7 +20,7 @@ public class TimeMyBatisController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(TimeMyBatisController.class);
 	
-	@Autowired //Dependency injection 의존성 주입.
+	@Autowired(required = false) //Dependency injection 의존성 주입.
 	private TimeMapper timeMapper;
 	
 

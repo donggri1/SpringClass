@@ -8,6 +8,9 @@
 	<bean id="calc" class="org.doit.ik.aop2.CalculatorImpl2"></bean>
 	<!--보조기능 객체  -->
 	<bean id="logPrintAroundAdvice" class="org.doit.ik.aop2.advice.LogPrintAroundAdvice"></bean>
+	<bean id="logPrintBeforeAdvice" class="org.doit.ik.aop2.advice.LogPrintBeforeAdvice"></bean>
+	<bean id="logPrintAfterReturningAdvice" class="org.doit.ik.aop2.advice.LogPrintAfterReturningAdvice"></bean>
+	
 	
 	<!-- 스프링 AOP : 프록시(proxy) 기반 -->
 	<bean id="calcProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
@@ -24,6 +27,8 @@
 		<property name="interceptorNames">
 			<list>
 				<value>logPrintAroundAdvice</value>
+				<value>logPrintBeforeAdvice</value>
+				<value>logPrintAfterReturningAdvice</value>
 			</list>
 		</property>
 	</bean>

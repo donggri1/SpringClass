@@ -6,12 +6,8 @@ public class CalculatorImpl2 implements Calculator{
 
 	@Override
 	public int add(int x, int y) {
-		
-
 		int result = x+y;
 
-
-		
 		return result;
 	}
 

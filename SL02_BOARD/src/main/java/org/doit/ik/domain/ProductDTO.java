@@ -25,5 +25,7 @@ public class ProductDTO {
     private String brandName;
     
     private List<ProductImgDTO> images;
+    // <Collection>
+    //private ProductImgDTO imgDTO;
 	
 }//class

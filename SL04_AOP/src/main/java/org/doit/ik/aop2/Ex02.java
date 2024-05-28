@@ -23,7 +23,11 @@ public class Ex02 {
 		GenericXmlApplicationContext ctx
 		= new GenericXmlApplicationContext("classpath:org/doit/ik/aop2/application-context2.xml");
 		
+		
+		
 		Calculator calc = ctx.getBean("calcProxy", Calculator.class);
+		
+		//Calculator calc = ctx.getBean("calc", Calculator.class);
 		System.out.println( calc.sub(3,5));
 		System.out.println( calc.add(3,5));
 		System.out.println( calc.div(3,5));

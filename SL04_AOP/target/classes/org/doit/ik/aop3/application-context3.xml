@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">	
+	
+<!-- 	객체 생성안함 빈으로할거임
+	실체 객체 
+	<bean id="calc" class="org.doit.ik.aop2.CalculatorImpl2"></bean>
+	보조기능 객체 
+	<bean id="logPrintAroundAdvice" class="org.doit.ik.aop2.advice.LogPrintAroundAdvice"></bean>
+	<bean id="logPrintBeforeAdvice" class="org.doit.ik.aop2.advice.LogPrintBeforeAdvice"></bean>
+	<bean id="logPrintAfterReturningAdvice" class="org.doit.ik.aop2.advice.LogPrintAfterReturningAdvice"></bean>
+	
+ -->
+ 
+ 	<context:component-scan base-package="org.doit.ik"/>
+ 	
+	<bean id="calcProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="calc"></property>
+		<!-- 2. pointcut 설정 -->
+		<property name="proxyInterfaces">
+			<list>
+			<!-- 이 안의 메서드 호출할 때 어라운드 어드바이스 장착해라  -->
+				<value>org.doit.ik.aop.Calculator</value>
+			</list>
+		</property>
+		<!-- 3. advice 등록  -->
+		<property name="interceptorNames">
+			<list>
+				<value>logPrintAroundAdvice3</value>
+				<value>logPrintBeforeAdvice3</value>
+				<value>logPrintAfterReturningAdvice3</value>
+			</list>
+		</property>
+	</bean>
+	
+
+</beans>

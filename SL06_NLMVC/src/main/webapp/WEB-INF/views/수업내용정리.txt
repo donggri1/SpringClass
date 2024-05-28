@@ -1,0 +1,105 @@
+1. org.doit.ik.domain 패키지 추가		-VO, DTO
+2. org.doit.ik.controller 패키지 추가	-CONTROLLER
+3. org.doit.ik.persistence 패키지 추가	-DAO,MAPPER
+4. org.doit.ik.service 패키지 추가		-SERVICE
+
+--5. 테이블 생성
+   --           공지사항(게시판)
+   CREATE TABLE NOTICES
+   (
+      "SEQ" VARCHAR2(10 BYTE),  -- 글번호
+      "TITLE" VARCHAR2(200 BYTE), -- 제목
+      "WRITER" VARCHAR2(50 BYTE), -- 작성자
+      "CONTENT" VARCHAR2(4000 BYTE), -- 내용
+      "REGDATE" TIMESTAMP (6),  -- 작성일
+      "HIT" NUMBER,  -- 조회수
+      "FILESRC" VARCHAR2(500 BYTE) -- 첨부파일
+   );
+   -- Table NOTICES이(가) 생성되었습니다.
+   
+   --            회원
+   DROP TABLE "MEMBER"
+   CREATE TABLE "MEMBER"
+   (   
+       "ID" VARCHAR2(50 BYTE),  -- UID -> ID 수정
+       "PWD" VARCHAR2(50 BYTE), 
+       "NAME" VARCHAR2(50 BYTE), 
+       "GENDER" VARCHAR2(10 BYTE), 
+       "BIRTH" VARCHAR2(10 BYTE), 
+       "IS_LUNAR" VARCHAR2(10 BYTE), 
+       "CPHONE" VARCHAR2(15 BYTE), 
+       "EMAIL" VARCHAR2(200 BYTE), 
+       "HABIT" VARCHAR2(200 BYTE), 
+       "REGDATE" DATE
+   );
+   -- Table "MEMBER"이(가) 생성되었습니다.
+   
+   -- NoticeVO.java
+   -- MemberVO.java
+   ----------------- 완료
+   -- NoticeDao.java
+   -- MemberDao.java
+   
+   모두 수정
+   
+ 7. webContent 폴더 -> webapp 으로 옮김
+ 	ㄴ css 폴더
+ 		customer.css  공지사항 css 파일
+ 		joinus.css		멤버 css 파일
+ 	ㄴ custmoer 폴더   - 공지사항 css, jsp 파일
+ 		notice.jsp 목록
+ 		noticeDetail.jsp 보기
+ 		noticeEdit.jsp 수정
+ 		noticeEdit.jsp 수정
+ 		noticeReg.jsp  추가
+ 	ㄴ  joinus 폴더 - 멤버(회원)
+ 		join.jsp 회원가입
+ 		login.jsp 로그인페이지
+ 
+ 8. web.xml
+       <!-- <url-pattern>/*</url-pattern> -->
+      <url-pattern>*.html</url-pattern>
+      
+ 9. 스프링 MVC 패턴 구현~  
+   1) 공지사항 목록 Spring 3.X
+   	  컨트롤러 클래스 사용. 
+   	  JSP 수업 : CommandHandler 인터페이스
+   	  			String	process();
+   	  			ListHandler implement CommandHandler==NoticeController{
+   	  				@Override
+   	  				String process(){ == handlerRequest
+   	  				 // 구현
+   	  			 }
+   	  			}
+   	  컨트롤러 메서드
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.doit</groupId>
 	<artifactId>ik</artifactId>
-	<name>SL00_DefaultSettings</name>
+	<name>SL06_NLMVC</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

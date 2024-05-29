@@ -1,0 +1,14 @@
+/cmr/upload
+
+단일 파일 첨부 테스트
+
+StandardServletMultipartResolver 사용하겠다
+
+1. SsmrUploadController.java
+	단일 파일 처리
+	1) MultipartFile 처리
+	2) Message 커맨드 객체 처리
+2. SsmrUploadController2.java
+	여러 파일 처리
+	1) MultipartFile 처리
+	2) Message2 커맨드 객체 처리

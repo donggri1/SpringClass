@@ -1,0 +1,52 @@
+p.511 트랜잭션 전파와 격리 레벨
+
+TEST-9
+@T
+[			insertAndPointUpMember()		]
+		// 1) insert() O + 2) insert() X
+		전체 롤백 
+
+
+[point =1]
+@T
+insert(){
+	//A.쓰기
+	//B.포인트 증가
+}
+[			insertAndPointUpMember()		]
+		// 1) insert() O + 2) insert() 
+		// A 		   A
+		   B  point=2  B CK 에러 
+		   
+		   
+	안되는 이유 ? 동일한 클래스 (NoticeImpl) 안에서
+	다른 메서드를 호출하는 구조로는 
+	insertAndPointupMember() -> insert()
+	AOP 방식으로 트랜잭션이 처리되지 않는다.
+
+	=> 해결
+		insertAndPointUpmember(_):서비스라는 별도의 클래스래를 만들어서 트랜잭션 처리 하면 된다
+	
+	
+	게시글의 상세보기
+		1) 게시글 가져오는 쿼리 BoardDao
+		2) 조회수 증가		 BoardDao
+		
+org.doit.ik.MemberShipService
+org.doit.ik.MemberShipServiceImple
+		
+@T X 		
+membership.insertAndPointUpMember()
+	@T
+	noticeDao.insert() 	A+B
+	
+	@T
+	noticeDao.insert() 	A+B
+		
+T X
+[
+	
+		
+		
+		
+		

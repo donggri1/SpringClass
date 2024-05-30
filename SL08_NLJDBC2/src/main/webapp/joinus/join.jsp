@@ -38,13 +38,13 @@
 				<h3 class="hidden">로그인메뉴</h3>
 				<ul id="loginmenu" class="block_hlist">
 					<li>
-						<a href="../index.jsp">HOME</a>
+						<a href="../index.htm">HOME</a>
 					</li>
 					<li>
-						<a href="../joinus/login.jsp">로그인</a>
+						<a href="../joinus/login.htm">로그인</a>
 					</li>
 					<li>
-						<a href="../joinus/join.jsp">회원가입</a>
+						<a href="../joinus/join.htm">회원가입</a>
 					</li>
 				</ul>
 				<h3 class="hidden">회원메뉴</h3>
@@ -160,10 +160,10 @@
 								</dd>
 							</dl>						
 						</div>
+						<div id="buttonLine">
+							<input class="btn-okay button" type="submit" value="가입" />					
+						</div>
 					</form>	
-					<div id="buttonLine">
-						<input class="btn-okay button" type="submit" value="가입" />
-					</div>
 				</div>
 				<div id="navi">
 					<h2>회원가입</h2>

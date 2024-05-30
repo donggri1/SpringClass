@@ -158,7 +158,7 @@ public class CustomerController {
 			return "noticeReg.jsp?error";
 		}
 		
-	}
+	}//noticeReg
 	
 	// NoticeController.java => ��Ʈ�ѷ� �޼��� ����
 	/* 1.

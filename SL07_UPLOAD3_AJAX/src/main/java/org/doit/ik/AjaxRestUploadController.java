@@ -35,8 +35,10 @@ public class AjaxRestUploadController {
 		  if (!attach.isEmpty()) { log.info("-".repeat(30));
 		  log.info("2. originalFilename " + attach.getOriginalFilename());
 		 log.info("2. size : " + attach.getSize());
-		 File saveFile = new File(uploadFolder, attach.getOriginalFilename()); try {
-		 attach.transferTo(saveFile); } catch (Exception e) {
+		 File saveFile = 
+				 new File(uploadFolder, attach.getOriginalFilename()); try {
+		 attach.transferTo(saveFile); } 
+		 catch (Exception e) {
 		  log.error(e.getMessage()); }
 		  
 		  log.info(" = end = "); }//if }//for

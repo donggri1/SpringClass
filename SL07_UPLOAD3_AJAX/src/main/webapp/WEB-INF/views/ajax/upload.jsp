@@ -68,6 +68,9 @@
 					
 				});//click
 			});
+  			
+  				
+			});//function
   		</script>
   	</div>
   	

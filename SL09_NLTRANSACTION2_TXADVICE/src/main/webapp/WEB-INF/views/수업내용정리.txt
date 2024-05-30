@@ -1,0 +1,29 @@
+
+2.트랜잭션 연습(실습)
+	1) 공지사항 새글 작성
+	2) 작성자 포인트 1 증가
+	
+3.dcha 계정 회원가입 -문제..
+
+4.
+
+   
+   ALTER TABLE member
+   ADD (  point number(10) default(0) );
+   --  title  유일성 제약조건 설정.
+   ALTER TABLE notices
+   ADD CONSTRAINT ck_notices_title UNIQUE(title);
+   -- point 컬럼값은 3 이상 X 제약 조건 ( 트  확인 )
+   ALTER TABLE member
+   ADD CONSTRAINT ck_notices_point  CHECK ( point < 3 );      
+   ALTER TABLE member
+   ADD (  point number(10) default(0) );
+   --  title  유일성 제약조건 설정.
+   ALTER TABLE notices
+   ADD CONSTRAINT ck_notices_title UNIQUE(title);
+   -- point 컬럼값은 3 이상 X 제약 조건 ( 트  확인 )
+   ALTER TABLE member
+   ADD CONSTRAINT ck_notices_point  CHECK ( point < 3 );   
+   
+   5. noticeDao 인터페이스
+   	게시글 작성 + 포인트 1증가 메서드  추가.

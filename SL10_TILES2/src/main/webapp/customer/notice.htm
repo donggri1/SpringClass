@@ -1,0 +1,30 @@
+1. transactionManager 등록 (root-context.xml)
+
+@T
+[ insertAndPointMember()] 
+// 1) insert() O + 2) update() X
+
+@T
+insert() {
+	// A. 쓰기
+	// B. 포인트 증가
+}	
+[insertAndPointMember()]
+@T[1) insert()] + @T[2) insert()]
+A 					A
+B  point=2			B CK 에러
+
+=> 이유? 동일한 클래스(NoticeDaoImpl) 안에서 다른 메서드를 호출하는 구조로는
+insertAndPointUpMember() -> insert()
+AOP 방식으로 트랜잭션이 처리되지 않는다
+
+=> 해결
+	insertAndPointMember()  서비스라는 별도의 클래스를 만들어서 트랜잭션 처리를 하면 된다.
+	
+	
+게시글의 상세보기
+  1) 게시글 가져오는 쿼리 BoardDao
+  2) 조회수 증가		  BoardDao
+  
+org.doit.ik.MemberShipService
+org.doit.ik.MemberShipServiceImpl

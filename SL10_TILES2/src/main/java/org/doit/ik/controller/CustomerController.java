@@ -62,7 +62,7 @@ public class CustomerController {
 	      ,Model model) throws Exception {
 	   NoticeVO notice= this.noticeDao.getNotice(seq);
 	   model.addAttribute("notice",notice);
-	   return "noticeEdit.jsp";
+	   return "customer.noticeEdit";
 	}
 	
 	// <input type="text"  name="o_filesrc"  value="${ notice.filesrc }" />
@@ -105,7 +105,7 @@ public class CustomerController {
 	
 	@GetMapping(value = "/noticeReg.htm")
 	public String noticeReg(HttpSession session) throws Exception{
-		return "noticeReg.jsp";
+		return "customer.noticeReg";
 	}
 	
 	
@@ -201,7 +201,7 @@ public class CustomerController {
 		model.addAttribute("list", list);
 		model.addAttribute("message", "hello world!");
 
-		return "notice.jsp";
+		return "customer.notice";
 	}
 	
 	// NoticeDetailController.java => ��Ʈ�ѷ� �޼��� ����
@@ -213,7 +213,7 @@ public class CustomerController {
 		NoticeVO notice = this.noticeDao.getNotice(seq);
 		
 		model.addAttribute("notice", notice);
-		return "noticeDetail.jsp";
+		return "customer.noticeDetail";
 	}
 	
 } // class

@@ -18,16 +18,16 @@ public class JoinController {
 	@Autowired
 	private MemberDao memberDao;
 	
-	// /joinus/login.htm -> /joinus/login.jsp ÀÀ´ä
+	// /joinus/login.htm -> /joinus/login.jsp ï¿½ï¿½ï¿½ï¿½
 	@GetMapping("/login.htm")
 	public String login() throws Exception{
-		return "login.jsp";
+		return "joinus.login";
 	}
 	
-	// /joinus/join.htm -> /joinus/join.jsp ÀÀ´ä
+	// /joinus/join.htm -> /joinus/join.jsp ï¿½ï¿½ï¿½ï¿½
 	@GetMapping("/join.htm")
 	public String join() throws Exception{
-		return "join.jsp";
+		return "joinus.join";
 	}
 	
 	@PostMapping("/join.htm")

@@ -1,0 +1,37 @@
+org.dout.ik.persistence
+	ㄴ NoticeDaoImpl.java	삭제	NoticeMapper.java
+	ㄴ MemberDaoImpl.java	삭제	MemberMapper.java
+	
+NoticeMapper.xml
+MemberMapper.xml
+
+p563 Mybatis 설명 읽기
+
+https://madplay.github.io/post/difference-between-dollar-sign-and-sharp-sign-in-mybatis
+
+ [ #{} ]
+
+파라미터가 String 형태로 들어와 자동적으로 '파라미터'형태가 된다.
+
+예를 들어, #{user_id}의 user_id 의 값이 abc 라면 쿼리문에는 USER_ID = 'abc'의 형태가 된다.
+
+★쿼리 주입을 예방할 수 있어 보안 측면에서 유리하다.★
+
+PreparedStatement 를 생성하게 되는데, 파싱된 쿼리문은 재활용(캐싱)되기 때문에 효율적이다.
+
+
+[ ${} ]
+
+파라미터가 바로 출력된다.
+
+해당 컬럼의 자료형에 맞추어 파라미터의 자료형이 변경된다.
+
+쿼리 주입을 예방할 수 없어 보안측면에서 불리하다
+. 그러므로 사용자의 입력을 전달할 때는 사용하지 않는 편이 낫다.
+
+테이블이나 컬럼명을 파라미터로 전달하고 싶을 때 사용한다.
+ #{}은 자동으로 ''가 붙어서 이 경우에는 사용할 수 없다.
+
+
+
+

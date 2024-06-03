@@ -1,0 +1,29 @@
+package org.doit.ik.mapper;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.doit.ik.domain.NoticeVO;
+
+public interface NoticeMapper {
+	
+	public int getCount(String field, String query) throws ClassNotFoundException, SQLException;
+	// 공지사항 뿌리는 메서드
+	public List<NoticeVO> getNotices(int page, String field, String query) throws ClassNotFoundException, SQLException;
+	//공지사항 삭제하는 메서드
+	public int delete(String seq) throws ClassNotFoundException, SQLException;
+	//공지사항 수정하는 메서드
+	public int update(NoticeVO notice) throws ClassNotFoundException, SQLException;
+	//공지사항 보기
+	public NoticeVO getNotice(String seq) throws ClassNotFoundException, SQLException;
+	//공지사항 추가하는 메서드
+	public int insert(NoticeVO notice) throws ClassNotFoundException, SQLException;
+	//트랜잭션 처리를 위한 메서드 추가
+	//public void insertAndPointUpOfMember(NoticeVO notice,String id) throws ClassNotFoundException, SQLException;
+	
+	// 조회수 올리는 함수
+	public void hitUp(String seq) throws ClassNotFoundException, SQLException;
+	// 조회수 얻어오는 함수
+	public int getHit(String seq) throws ClassNotFoundException, SQLException;
+	
+}

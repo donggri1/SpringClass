@@ -1,0 +1,23 @@
+p.692 
+DB를 이용한 인증 처리 구조
+
+칼럼명이달라도 알리아스를 사용하면된다.
+
+
+
+ALTER TABLE member
+ADD ( enabled char(1) default '1');
+
+ALTER TABLE member
+ADD CONSTRAINT pk_member_id PRIMARY KEY(id);
+
+  CREATE TABLE member_authorities(
+   username     varchar2(50) not null      
+  , authority    varchar2(50) not null 
+  , constraint fk_member_authorities_username 
+               FOREIGN KEY(username) 
+               REFERENCES member(id)
+  );
+
+  
+  PasswordEncoder 임시 사용 X {noop}
